@@ -1,0 +1,2 @@
+.events-list { display: flex; flex-direction: column; gap: 20px; }
+.special-events-section { background: var(--bg-light); }

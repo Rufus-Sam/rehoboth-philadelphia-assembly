@@ -1,0 +1,43 @@
+.event-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 25px;
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  border-left: 4px solid var(--primary);
+}
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+.event-date-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  border-radius: 10px;
+  color: var(--white);
+}
+.event-day { font-size: 1.5rem; font-weight: 700; line-height: 1; }
+.event-month { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; }
+.event-info h3 { font-size: 1.2rem; color: var(--primary); margin-bottom: 8px; font-family: 'Open Sans', sans-serif; }
+.event-time, .event-location { font-size: 0.9rem; color: var(--text-light); margin-bottom: 5px; }
+.event-description { font-size: 0.9rem; color: var(--text-dark); margin-top: 8px; }
+.event-type-badge {
+  position: absolute; top: 15px; right: 15px;
+  padding: 4px 12px; border-radius: 15px;
+  font-size: 0.7rem; font-weight: 600; text-transform: uppercase;
+}
+.event-type-badge.weekly { background: #e8f5e9; color: #2e7d32; }
+.event-type-badge.monthly { background: #e3f2fd; color: #1565c0; }
+.event-type-badge.special { background: #fff3e0; color: #e65100; }
+.event-type-badge.annual { background: #fce4ec; color: #c62828; }
+@media (max-width: 600px) { .event-card { flex-direction: column; } }

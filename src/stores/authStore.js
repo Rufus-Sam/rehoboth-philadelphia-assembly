@@ -55,6 +55,27 @@ export const useAuthStore = create((set, get) => ({
     }
   },
 
+  verifyOtp: async (email, token) => {
+    try {
+      set({ error: null });
+      const result = await authAdapter.verifyOtp(email, token);
+      return result;
+    } catch (error) {
+      set({ error: error.message });
+      throw error;
+    }
+  },
+
+  resendOtp: async (email) => {
+    try {
+      set({ error: null });
+      await authAdapter.resendOtp(email);
+    } catch (error) {
+      set({ error: error.message });
+      throw error;
+    }
+  },
+
   signOut: async () => {
     await authAdapter.signOut();
     set({ user: null, profile: null });

@@ -20,5 +20,7 @@ export class AuthAdapter {
   async getCurrentUser() { throw new Error('Not implemented'); }
   async getSession() { throw new Error('Not implemented'); }
   onAuthStateChange(callback) { throw new Error('Not implemented'); }
+  async verifyOtp(email, token) { throw new Error('Not implemented'); }
+  async resendOtp(email) { throw new Error('Not implemented'); }
   async resetPassword(email) { throw new Error('Not implemented'); }
 }

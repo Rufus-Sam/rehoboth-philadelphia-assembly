@@ -25,6 +25,9 @@ export class SupabaseAuthAdapter extends AuthAdapter {
       options: { data: metadata },
     });
     if (error) throw error;
+    if (data.user && data.user.identities && data.user.identities.length === 0) {
+      throw new Error('An account with this email already exists. Please sign in instead.');
+    }
     return { user: this._mapUser(data.user), session: data.session };
   }
 
@@ -49,6 +52,24 @@ export class SupabaseAuthAdapter extends AuthAdapter {
       callback(user, session);
     });
     return () => subscription.unsubscribe();
+  }
+
+  async verifyOtp(email, token) {
+    const { data, error } = await supabase.auth.verifyOtp({
+      email,
+      token,
+      type: 'signup',
+    });
+    if (error) throw error;
+    return { user: this._mapUser(data.user), session: data.session };
+  }
+
+  async resendOtp(email) {
+    const { error } = await supabase.auth.resend({
+      type: 'signup',
+      email,
+    });
+    if (error) throw error;
   }
 
   async resetPassword(email) {

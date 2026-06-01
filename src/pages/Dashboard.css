@@ -1,0 +1,111 @@
+.dashboard-page {
+  padding: 6rem 0 4rem;
+  min-height: 100vh;
+  background: #f5f7fb;
+}
+
+.dashboard-header {
+  margin-bottom: 2rem;
+}
+
+.dashboard-header h1 {
+  font-family: 'Playfair Display', serif;
+  color: #1a237e;
+}
+
+.dashboard-header p {
+  color: #666;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.dash-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  text-align: center;
+}
+
+.dash-card-icon {
+  font-size: 2rem;
+  color: #1a237e;
+  margin-bottom: 1rem;
+}
+
+.dash-card h3 {
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.dash-card p {
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.plan-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1a237e !important;
+}
+
+.plan-price {
+  font-size: 1.1rem;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  margin: 0.5rem 0;
+}
+
+.status-active { background: #dcfce7; color: #16a34a; }
+.status-cancelled { background: #fef3c7; color: #d97706; }
+.status-past_due { background: #fef2f2; color: #dc2626; }
+.status-pending { background: #e0e7ff; color: #4f46e5; }
+.status-captured { background: #dcfce7; color: #16a34a; }
+.status-failed { background: #fef2f2; color: #dc2626; }
+
+.btn-sm {
+  padding: 0.5rem 1.25rem;
+  font-size: 0.85rem;
+  margin-top: 0.75rem;
+}
+
+.payment-history {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.payment-history h2 {
+  margin-bottom: 1rem;
+  color: #1a237e;
+}
+
+.payments-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.payments-table th,
+.payments-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.payments-table th {
+  font-weight: 600;
+  color: #333;
+}
